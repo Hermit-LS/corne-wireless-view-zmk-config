@@ -52,10 +52,28 @@
 
             display-name = "Raise";
             bindings = <
-&trans  &trans  &trans  &kp LBRC  &kp RBRC  &trans    &trans  &kp HOME        &kp PG_UP     &kp PAGE_DOWN  &kp END          &trans
-&trans  &trans  &trans  &kp LPAR  &kp RPAR  &trans    &trans  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN       &kp RIGHT_ARROW  &trans
-&trans  &trans  &trans  &kp LBKT  &kp RBKT  &trans    &trans  &trans          &trans        &trans         &trans           &trans
-                        &trans    &trans    &trans    &trans  &trans          &trans
+&trans  &kp AMPS  &kp CARET  &kp LBRC  &kp RBRC  &kp PIPE         &kp K_VOLUME_UP    &kp HOME          &kp PG_UP     &kp PAGE_DOWN   &kp END          &to 3
+&trans  &kp AT    &kp EXCL   &kp LPAR  &kp RPAR  &kp BACKSLASH    &kp K_MUTE         &kp LEFT_ARROW    &kp UP_ARROW  &kp DOWN        &kp RIGHT_ARROW  &trans
+&trans  &kp HASH  &kp STAR   &kp LBKT  &kp RBKT  &kp PERCENT      &kp K_VOLUME_DOWN  &kp K_PLAY_PAUSE  &kp K_NEXT    &kp K_PREVIOUS  &trans           &trans
+                             &trans    &trans    &trans           &trans             &trans            &trans
+            >;
+        };
+
+        Gaming1 {
+            bindings = <
+&kp ESC   &kp I      &kp Q  &kp W  &kp E      &kp R        &trans  &trans  &trans  &trans  &trans  &trans
+&kp TAB   &kp M      &kp A  &kp S  &kp D      &kp F        &trans  &trans  &trans  &trans  &trans  &trans
+&kp LALT  &kp LCTRL  &kp Z  &kp X  &kp C      &kp V        &trans  &trans  &trans  &trans  &trans  &trans
+                            &mo 4  &kp LSHFT  &kp SPACE    &trans  &trans  &trans
+            >;
+        };
+
+        Gaming2 {
+            bindings = <
+&kp F9  &kp F3  &kp F2  &kp N1  &kp F1  &trans    &trans  &trans  &trans  &trans  &trans  &to 0
+&kp F5  &kp N5  &kp N4  &kp N3  &kp N2  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp N8  &kp N7  &kp N6  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
