@@ -37,10 +37,10 @@
 
             display-name = "Lower";
             bindings = <
-&trans  &kp F5     &kp F4  &kp F3  &kp F2  &kp F1    &kp F6        &kp F7  &kp F8  &kp F9  &kp F10    &trans
-&trans  &kp N1     &kp N2  &kp N3  &kp N4  &kp N5    &kp NUMBER_6  &kp N7  &kp N8  &kp N9  &kp N0     &trans
-&trans  &kp MINUS  &none   &none   &none   &none     &none         &none   &none   &none   &kp EQUAL  &trans
-                           &trans  &trans  &trans    &trans        &trans  &trans
+&trans  &kp F5  &kp F4  &kp F3  &kp F2  &kp F1    &kp F6        &kp F7  &kp F8  &kp F9  &kp F10  &trans
+&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp NUMBER_6  &kp N7  &kp N8  &kp N9  &kp N0   &trans
+&trans  &none   &none   &none   &none   &none     &none         &none   &none   &none   &none    &trans
+                        &trans  &trans  &trans    &trans        &trans  &trans
             >;
         };
 
@@ -53,10 +53,19 @@
 
             display-name = "Raise";
             bindings = <
-&trans    &kp PIPE       &kp CARET     &kp AT_SIGN      &kp LEFT_BRACE        &kp RIGHT_BRACE          &kp C_NEXT        &kp HOME         &kp PG_UP     &kp PAGE_DOWN      &kp END          &to 3
-&trans    &kp BACKSLASH  &kp ASTERISK  &kp EXCLAMATION  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp C_PLAY_PAUSE  &kp LEFT_ARROW   &kp UP_ARROW  &kp DOWN           &kp RIGHT_ARROW  &kp INSERT
-&kp HASH  &kp DOLLAR     &kp PERCENT   &kp AMPERSAND    &kp LEFT_BRACKET      &kp RIGHT_BRACKET        &kp C_AC_BACK     &kp C_VOLUME_UP  &kp K_MUTE    &kp C_VOLUME_DOWN  &none            &bt BT_CLR_ALL
-                                       &trans           &trans                &trans                   &trans            &trans           &trans
+&trans    &kp PIPE       &kp CARET     &kp AT_SIGN      &kp LEFT_BRACE        &kp RIGHT_BRACE          &none   &none           &none      &none  &none  &none
+&trans    &kp BACKSLASH  &kp ASTERISK  &kp EXCLAMATION  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &none   &kp MINUS       &kp EQUAL  &none  &none  &none
+&kp HASH  &kp DOLLAR     &kp PERCENT   &kp AMPERSAND    &kp LEFT_BRACKET      &kp RIGHT_BRACKET        &none   &kp UNDERSCORE  &kp PLUS   &none  &none  &none
+                                       &trans           &trans                &trans                   &trans  &trans          &trans
+            >;
+        };
+
+        Functions {
+            bindings = <
+&to 4  &none     &none      &none      &none    &kp INS      &kp C_NEXT        &none          &none     &none   &none      &none
+&none  &kp HOME  &kp PG_UP  &kp PG_DN  &kp END  &kp SPACE    &kp C_PLAY_PAUSE  &kp LEFT       &kp DOWN  &kp UP  &kp RIGHT  &none
+&none  &none     &none      &none      &kp DEL  &kp ENTER    &kp C_AC_BACK     &kp BACKSPACE  &none     &none   &none      &bt BT_CLR_ALL
+                            &none      &none    &none        &none             &none          &none
             >;
         };
 
@@ -65,7 +74,7 @@
 &kp ESC   &kp I      &kp Q  &kp W  &kp E      &kp R        &trans  &trans  &trans  &trans  &trans  &trans
 &kp TAB   &kp M      &kp A  &kp S  &kp D      &kp F        &trans  &trans  &trans  &trans  &trans  &trans
 &kp LALT  &kp LCTRL  &kp Z  &kp X  &kp C      &kp V        &trans  &trans  &trans  &trans  &trans  &trans
-                            &mo 4  &kp LSHFT  &kp SPACE    &trans  &trans  &trans
+                            &mo 5  &kp LSHFT  &kp SPACE    &trans  &trans  &trans
             >;
         };
 
@@ -76,6 +85,15 @@
 &trans  &trans  &kp N8  &kp N7  &kp N6  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans  &trans  &trans
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        Func {
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 };
