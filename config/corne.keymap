@@ -37,9 +37,9 @@
 
             display-name = "Lower";
             bindings = <
-&trans  &kp F5  &kp F4  &kp F3  &kp F2  &kp F1    &kp F6        &kp F7  &kp F8  &kp F9  &kp F10  &trans
+&trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5    &kp F6        &kp F7  &kp F8  &kp F9  &kp F10  &trans
 &trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp NUMBER_6  &kp N7  &kp N8  &kp N9  &kp N0   &trans
-&trans  &none   &none   &none   &none   &none     &none         &none   &none   &none   &none    &trans
+&trans  &none   &none   &none   &none   &none     &none         &none   &trans  &trans  &trans   &trans
                         &trans  &trans  &trans    &trans        &trans  &trans
             >;
         };
@@ -53,17 +53,17 @@
 
             display-name = "Raise";
             bindings = <
-&trans    &kp PIPE       &kp CARET     &kp AT_SIGN      &kp LEFT_BRACE        &kp RIGHT_BRACE          &none   &none           &none      &none  &none  &none
-&trans    &kp BACKSLASH  &kp ASTERISK  &kp EXCLAMATION  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &none   &kp MINUS       &kp EQUAL  &none  &none  &none
-&kp HASH  &kp DOLLAR     &kp PERCENT   &kp AMPERSAND    &kp LEFT_BRACKET      &kp RIGHT_BRACKET        &none   &kp UNDERSCORE  &kp PLUS   &none  &none  &none
-                                       &trans           &trans                &trans                   &trans  &trans          &trans
+&trans  &none      &none          &none     &kp LEFT_BRACE        &kp RIGHT_BRACE          &none   &none           &none      &none       &none     &none
+&trans  &kp CARET  &kp BACKSLASH  &kp PIPE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &none   &kp MINUS       &kp EQUAL  &kp EXCL    &kp AT    &none
+&trans  &kp HASH   &kp PERCENT    &kp STAR  &kp LEFT_BRACKET      &kp RIGHT_BRACKET        &none   &kp UNDERSCORE  &kp PLUS   &kp DOLLAR  &kp AMPS  &none
+                                  &trans    &trans                &trans                   &trans  &trans          &trans
             >;
         };
 
         Functions {
             display-name = "Functions";
             bindings = <
-&to 4  &none     &none      &none      &none    &kp INS      &kp C_NEXT        &none          &none     &none   &none      &none
+&to 4  &none     &none      &none      &kp INS  &none        &kp C_NEXT        &none          &none     &none   &none      &none
 &none  &kp HOME  &kp PG_UP  &kp PG_DN  &kp END  &kp SPACE    &kp C_PLAY_PAUSE  &kp LEFT       &kp DOWN  &kp UP  &kp RIGHT  &none
 &none  &none     &none      &none      &kp DEL  &kp ENTER    &kp C_AC_BACK     &kp BACKSPACE  &none     &none   &none      &bt BT_CLR_ALL
                             &none      &none    &none        &none             &none          &none
