@@ -53,10 +53,10 @@
 
             display-name = "Raise";
             bindings = <
-&trans  &none      &none          &none     &kp LEFT_BRACE        &kp RIGHT_BRACE          &none   &none           &none      &none       &none     &none
-&trans  &kp CARET  &kp BACKSLASH  &kp PIPE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &none   &kp MINUS       &kp EQUAL  &kp EXCL    &kp AT    &none
-&trans  &kp HASH   &kp PERCENT    &kp STAR  &kp LEFT_BRACKET      &kp RIGHT_BRACKET        &none   &kp UNDERSCORE  &kp PLUS   &kp DOLLAR  &kp AMPS  &none
-                                  &trans    &trans                &trans                   &trans  &trans          &trans
+&trans  &none      &kp TILDE      &kp GRAVE  &kp LEFT_BRACE        &kp RIGHT_BRACE          &none   &none           &none      &none       &none     &none
+&trans  &kp CARET  &kp BACKSLASH  &kp PIPE   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &none   &kp MINUS       &kp EQUAL  &kp EXCL    &kp AT    &none
+&trans  &kp HASH   &kp PERCENT    &kp STAR   &kp LEFT_BRACKET      &kp RIGHT_BRACKET        &none   &kp UNDERSCORE  &kp PLUS   &kp DOLLAR  &kp AMPS  &none
+                                  &trans     &trans                &trans                   &trans  &trans          &trans
             >;
         };
 
