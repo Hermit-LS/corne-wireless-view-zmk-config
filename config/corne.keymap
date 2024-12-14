@@ -9,6 +9,19 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    behaviors {
+        spaceshift: spaceshift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SPACESHIFT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            hold-trigger-key-positions = <38>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -21,10 +34,10 @@
 
             display-name = "Base";
             bindings = <
-&kp ESCAPE  &kp Q  &kp W  &kp F  &kp P    &kp B                   &kp J                 &kp L          &kp U      &kp Y    &kp SEMICOLON  &kp LEFT_WIN
-&kp TAB     &kp A  &kp R  &kp S  &kp T    &kp G                   &kp M                 &kp N          &kp E      &kp I    &kp O          &kp SINGLE_QUOTE
-&kp LCTRL   &kp Z  &kp X  &kp C  &kp D    &kp V                   &kp K                 &kp H          &kp COMMA  &kp DOT  &kp FSLH       &kp LEFT_ALT
-                          &mo 1  &kp DEL  &mt SPACE LEFT_SHIFT    &mt LEFT_SHIFT ENTER  &kp BACKSPACE  &mo 2
+&kp ESCAPE  &kp Q  &kp W  &kp F  &kp P    &kp B                           &kp J                 &kp L          &kp U      &kp Y    &kp SEMICOLON  &kp LEFT_WIN
+&kp TAB     &kp A  &kp R  &kp S  &kp T    &kp G                           &kp M                 &kp N          &kp E      &kp I    &kp O          &kp SINGLE_QUOTE
+&kp LCTRL   &kp Z  &kp X  &kp C  &kp D    &kp V                           &kp K                 &kp H          &kp COMMA  &kp DOT  &kp FSLH       &kp LEFT_ALT
+                          &mo 1  &kp DEL  &spaceshift LEFT_SHIFT SPACE    &mt LEFT_SHIFT ENTER  &kp BACKSPACE  &mo 2
             >;
         };
 
