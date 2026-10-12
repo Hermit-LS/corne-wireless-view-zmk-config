@@ -47,84 +47,47 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-
-            display-name = "Base";
+        Base {
+            display-name = "BASE";
             bindings = <
-&kp TAB         &kp Q  &kp W  &kp F     &kp P  &kp B        &kp J      &kp L  &kp U          &kp Y    &kp SEMICOLON  &kp RIGHT_GUI
-&kp LCTRL       &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LEFT_SHIFT S  &hml LEFT_CONTROL T  &kp G        &kp M      &hmr RIGHT_CTRL N  &hmr RIGHT_SHIFT E  &hmr RIGHT_ALT I  &hmr RIGHT_GUI O &kp SINGLE_QUOTE
-&kp LEFT_SHIFT  &kp Z  &kp X  &kp C     &kp D  &kp V        &kp K      &kp H  &kp COMMA      &kp DOT  &kp FSLH       &kp ESC
-                              &kp DELETE  &mo 1  &kp SPACE    &kp ENTER  &mo 2  &kp BACKSPACE
+&kp TAB  &kp Q  &kp W  &kp F  &kp P  &kp B  &kp J  &kp L  &kp U  &kp Y  &kp SEMICOLON  &kp RIGHT_GUI  &kp LCTRL  &hml LEFT_CONTROL A  &hml LEFT_ALT R  &hml LEFT_GUI S  &hml LEFT_SHIFT T  &kp G  &kp M  &hmr RIGHT_SHIFT N  &hmr RIGHT_GUI E  &hmr RIGHT_ALT I  &hmr RIGHT_CONTROL O  &kp SQT  &kp LSHFT  &kp Z  &kp X  &kp C  &kp D  &kp V  &kp K  &kp H  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC  &kp DELETE  &mo 1  &kp SPACE  &kp RET  &mo 2  &kp BACKSPACE
             >;
         };
 
-        lower_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
-            display-name = "Lower";
+        Numbers {
+            display-name = "NUM";
             bindings = <
-&trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5    &kp F6        &kp F7  &kp F8  &kp F9  &kp F10  &trans
-&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp NUMBER_6  &kp N7  &kp N8  &kp N9  &kp N0   &trans
-&trans  &none   &none   &none   &none   &none     &none         &none   &trans  &trans  &trans   &trans
-                        &trans  &trans  &trans    &trans        &trans  &trans
+&kp TAB  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp LCTRL  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5  &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp F12  &kp LSHFT  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &kp LGUI  &trans  &kp SPACE  &kp RET  &trans  &kp RALT
             >;
         };
 
-        raise_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
-            display-name = "Raise";
+        Symbols {
+            display-name = "SYM";
             bindings = <
-&trans  &none      &kp TILDE      &kp GRAVE  &kp LEFT_BRACE        &kp RIGHT_BRACE          &none   &none           &none      &none       &none     &kp BACKSPACE
-&trans  &kp CARET  &kp BACKSLASH  &kp PIPE   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &none   &kp MINUS       &kp EQUAL  &kp EXCL    &kp AT    &none
-&trans  &kp HASH   &kp PERCENT    &kp STAR   &kp LEFT_BRACKET      &kp RIGHT_BRACKET        &none   &kp UNDERSCORE  &kp PLUS   &kp DOLLAR  &kp AMPS  &none
-                                  &trans     &trans                &trans                   &trans  &trans          &trans
+&kp TAB  &none  &kp TILDE  &kp GRAVE  &kp LEFT_BRACE  &kp RIGHT_BRACE  &none  &none  &none  &none  &none  &none  &none  &kp CARET  &kp BACKSLASH  &kp PIPE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none  &kp MINUS  &kp EQUAL  &kp EXCLAMATION  &kp AT_SIGN  &none  &none  &kp POUND  &kp PERCENT  &kp ASTERISK  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &none  &kp UNDERSCORE  &kp PLUS  &kp DOLLAR  &kp AMPERSAND  &none  &kp DEL  &trans  &kp SPACE  &kp RET  &trans  &kp BACKSPACE
             >;
         };
 
-        Functions {
-            display-name = "Functions";
+        System {
+            display-name = "SYS";
             bindings = <
-&bt BT_CLR  &none     &none      &none      &kp INS  &none        &kp C_NEXT        &kp LS(LG(LEFT))  &kp LS(LG(DOWN))  &kp LS(LG(UP_ARROW))  &kp LS(LG(RIGHT))  &kp BACKSPACE
-&bt BT_NXT  &kp HOME  &kp PG_UP  &kp PG_DN  &kp END  &kp SPACE    &kp C_PLAY_PAUSE  &kp LEFT          &kp DOWN          &kp UP                &kp RIGHT          &none
-&bt BT_PRV  &none     &none      &none      &none    &none        &kp C_PREVIOUS    &kp BACKSPACE     &none             &none                 &none              &to 4
-                                 &kp LGUI   &mo 1    &kp SPACE    &kp ENTER         &mo 2             &kp RIGHT_ALT
+&bt BT_CLR  &none  &none  &none  &none  &none  &kp C_VOLUME_UP  &kp LC(A)  &kp LC(LEFT)  &kp LC(RIGHT)  &kp LC(E)  &kp LC(BACKSPACE)  &bt BT_NXT  &mt LCTRL HOME  &mt LEFT_ALT PG_UP  &mt LEFT_GUI PAGE_DOWN  &mt LEFT_SHIFT HOME  &kp INS  &kp C_MUTE  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &none  &bt BT_PRV  &none  &none  &none  &none  &none  &kp C_VOL_DN  &none  &none  &none  &none  &to 5  &kp DEL  &mo NAV  &kp SPACE  &kp RET  &mo 2  &kp BACKSPACE
             >;
         };
 
-        Gaming1 {
-            display-name = "Gaming";
+        GamingLower {
+            display-name = "GM1";
             bindings = <
-&kp ESC    &kp EQUAL     &kp Q  &kp W  &kp E      &kp R        &kp T      &kp Y     &kp U     &kp I          &kp O             &kp P
-&kp TAB    &kp MINUS     &kp A  &kp S  &kp D      &kp F        &kp G      &kp H     &kp J     &kp K          &kp L             &kp SEMI
-&kp LCTRL  &kp LEFT_ALT  &kp Z  &kp X  &kp C      &kp V        &kp B      &kp N     &kp M     &kp LESS_THAN  &kp GREATER_THAN  &kp QUESTION
-                                &mo 5  &kp LSHFT  &kp SPACE    &kp ENTER  &kp BSPC  &kp LGUI
+&kp ESC  &kp EQUAL  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp TAB  &kp MINUS  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp SEMICOLON  &kp LCTRL  &kp LEFT_ALT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp LESS_THAN  &kp GREATER_THAN  &kp QUESTION  &mo 5  &kp LEFT_SHIFT  &kp SPACE  &kp RET  &kp BACKSPACE  &kp LEFT_WIN
             >;
         };
 
-        Gaming2 {
-            display-name = "Gaming_R";
+        GamingUpper {
+            display-name = "GM2";
             bindings = <
-&kp F9  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5    &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp BACKSPACE
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5    &trans  &trans  &trans  &trans  &trans   &trans
-&trans  &trans        &kp NUMBER_6  &kp N7        &kp N8        &kp N9    &trans  &trans  &trans  &trans  &trans   &to 0
-                                    &trans        &trans        &trans    &trans  &trans  &trans
+&kp F9  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp BSPC  &trans  &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp N5  &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &trans  &trans  &trans  &trans  &trans  &to 0  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
-    };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
